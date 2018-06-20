@@ -90,23 +90,13 @@ app_license = "MIT"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"custom_app.tasks.all"
-# 	],
-# 	"daily": [
-# 		"custom_app.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"custom_app.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"custom_app.tasks.weekly"
-# 	]
-# 	"monthly": [
-# 		"custom_app.tasks.monthly"
-# 	]
-# }
+scheduler_events = {
+	"cron": {
+        "0 0 * * *": [
+            "custom_app.custom_app.doctype.expire_batch_scheduler.expire_batch_scheduler.sendmail"
+        ]
+	}
+}
 
 # Testing
 # -------
